@@ -32,7 +32,7 @@ public class AutorService {
 
         autor.atualizarDados(dadosAtualizados);
 
-        return autor;
+        return autorRepository.save(autor);
     }
 
     public void deletarAutor(UUID id) {

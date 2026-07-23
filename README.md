@@ -101,12 +101,12 @@ src/main/java
 * [ ] Mockito
 * [ ] Testcontainers
 * [ ] JaCoCo
-* [ ] SonarQube
+* [x] SonarQube
 
 ### Fase 5 — Infraestrutura
 
 * [ ] Flyway
-* [ ] Docker Compose
+* [x] Docker Compose
 * [ ] Spring Security
 * [ ] JWT
 * [ ] OpenAPI / Swagger

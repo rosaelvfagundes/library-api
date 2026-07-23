@@ -13,4 +13,4 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
 volumes:
-  postgres_data: # Declaração do volume para persistência dos dados
+  postgres_data:

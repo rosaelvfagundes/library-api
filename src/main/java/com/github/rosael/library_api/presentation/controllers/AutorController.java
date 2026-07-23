@@ -4,7 +4,6 @@ import com.github.rosael.library_api.application.services.AutorService;
 import com.github.rosael.library_api.data.entities.Autor;
 import com.github.rosael.library_api.presentation.dtos.request.AutorRequestDTO;
 import com.github.rosael.library_api.presentation.dtos.response.AutorResponseDTO;
-import jakarta.websocket.server.PathParam;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,7 +32,7 @@ public class AutorController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<AutorResponseDTO> buscarAutorPorId(@PathParam("id") UUID id) {
+    public ResponseEntity<AutorResponseDTO> buscarAutorPorId(@PathVariable("id") UUID id) {
         return ResponseEntity.status(HttpStatus.OK)
             .body(AutorResponseDTO.fromEntity(autorService.buscarAutorPorId(id)));
     }
@@ -53,13 +52,13 @@ public class AutorController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Void> atualizarAutor(@PathParam("id") UUID id, @RequestBody AutorRequestDTO dto) {
+    public ResponseEntity<Void> atualizarAutor(@PathVariable("id") UUID id, @RequestBody AutorRequestDTO dto) {
         autorService.atualizarAutor(id, dto.toEntity());
         return ResponseEntity.status(HttpStatus.ACCEPTED).build();
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletarAutor(@PathParam("id") UUID id) {
+    public ResponseEntity<Void> deletarAutor(@PathVariable("id") UUID id) {
         autorService.deletarAutor(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
