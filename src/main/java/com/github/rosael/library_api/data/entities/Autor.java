@@ -28,4 +28,10 @@ public class Autor {
 
     @Column(length = 50, nullable = false)
     private String nacionalidade;
+
+    public void atualizarDados(Autor dados) {
+        if (dados.getNome() != null) setNome(dados.getNome());
+        if (dados.getDataNascimento() != null) setDataNascimento(dados.getDataNascimento());
+        if (dados.getNacionalidade() != null) setNacionalidade(dados.getNacionalidade());
+    }
 }
